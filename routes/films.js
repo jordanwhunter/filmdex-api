@@ -38,6 +38,38 @@ router.post('/', async (req, res) => {
 });
 
 // Route for UPDATING an existing film type
+router.patch('/:id', getFilm, async (req, res) => {
+  if (req.body.name !== null) {
+    res.film.name = req.body.name
+  }
+  if (req.body.brand !== null) {
+    res.film.brand = req.body.brand
+  }
+  if (req.body.iso !== null) {
+    res.film.iso = req.body.iso
+  }
+  if (req.body.sizes !== null) {
+    res.film.sizes = req.body.sizes
+  }
+  if (req.body.color !== null) {
+    res.film.color = req.body.color
+  }
+  if (req.body.process !== null) {
+    res.film.process = req.body.process
+  }
+  if (req.body.staticImageUrl !== null) {
+    res.film.staticImageUrl = req.body.staticImageUrl
+  }
+  if (req.body.description !== null) {
+    res.film.description = req.body.description
+  }
+  try {
+    const updatedFilm = await res.film.save()
+    res.json(updatedFilm)
+  } catch (error) {
+    res.status(400).json({ message: error.message })
+  }
+});
 
 // Route for DELETING an existing film type
 
