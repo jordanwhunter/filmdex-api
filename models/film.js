@@ -35,7 +35,7 @@ const filmSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  static_image_url: {
+  staticImageUrl: {
     type: String,
     required: true,
     trim: true
@@ -45,7 +45,7 @@ const filmSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  date_added: {
+  dateAdded: {
     type: Date,
     required: true,
     default: Date.now
