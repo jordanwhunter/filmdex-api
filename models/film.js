@@ -15,17 +15,25 @@ const filmSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  sizes: [{
-    index: {
-      type: Number,
-      required: true
-    },
-    format: {
-      type: String,
-      required: true,
-      trim: true
-    }
-  }],
+  formatThirtyFive: {
+    type: Boolean,
+    required: true
+  },
+  formatOneTwenty: {
+    type: Boolean,
+    required: true
+  },
+  // sizes: [{
+  //   index: {
+  //     type: Number,
+  //     required: true
+  //   },
+  //   format: {
+  //     type: String,
+  //     required: true,
+  //     trim: true
+  //   }
+  // }],
   color: {
     type: Boolean,
     required: true

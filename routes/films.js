@@ -23,7 +23,8 @@ router.post('/', async (req, res) => {
     name: req.body.name,
     brand: req.body.brand,
     iso: req.body.iso,
-    sizes: req.body.sizes,
+    formatThirtyFive: req.body.formatThirtyFive,
+    formatOneTwenty: req.body.formatOneTwenty,
     color: req.body.color,
     process: req.body.process,
     staticImageUrl: req.body.staticImageUrl,
@@ -48,8 +49,11 @@ router.patch('/:id', getFilm, async (req, res) => {
   if (req.body.iso !== null) {
     res.film.iso = req.body.iso
   }
-  if (req.body.sizes !== null) {
-    res.film.sizes = req.body.sizes
+  if (req.body.formatThirtyFive !== null) {
+    res.film.formatThirtyFive = req.body.formatThirtyFive
+  }
+  if (req.body.formatOneTwenty !== null) {
+    res.film.formatOneTwenty = req.body.formatOneTwenty
   }
   if (req.body.color !== null) {
     res.film.color = req.body.color
@@ -72,5 +76,6 @@ router.patch('/:id', getFilm, async (req, res) => {
 });
 
 // Route for DELETING an existing film type
+
 
 module.exports = router
