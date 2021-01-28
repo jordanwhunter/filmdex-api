@@ -23,4 +23,4 @@ const connectDB = async () => {
 }
 connectDB();
 
-app.listen(3000, () => console.log('Server Is Listening On Port 3000!'))
+app.listen(9000, () => console.log('Server Is Listening On Port 9000!'))
