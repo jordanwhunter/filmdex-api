@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "server",
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node-server"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "server.js"
+    }
+  ], 
+  "env": {
+    "MONGODB_URI": "@my-mongodb-uri",
+    "CORS_ORIGIN": "*"
+  }
+}
