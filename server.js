@@ -23,4 +23,7 @@ const connectDB = async () => {
 }
 connectDB();
 
+const filmsRouter = require('./routes/films')
+app.use('/films', filmsRouter)
+
 app.listen(9000, () => console.log('Server Is Listening On Port 9000!'))
