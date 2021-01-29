@@ -1,63 +1,27 @@
 const mongoose = require('mongoose');
 
+const typeString = { type: String, trim: true };
+const typeReqString = { type: String, required: true, trim: true };
+const typeReqNumber = { type: Number, required: true }
+const typeReqBoolean = { type: Boolean, required: true }
+const typeReqDate = { type: Date, required: true, default: Date.now }
+
+const customDescriptionSchema = new mongoose.Schema({ uniqueTag: typeString });
+const keyFeaturesSchema = new mongoose.Schema({ feature: typeString });
+
 const filmSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  brand: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  iso: {
-    type: Number,
-    required: true
-  },
-  formatThirtyFive: {
-    type: Boolean,
-    required: true
-  },
-  formatOneTwenty: {
-    type: Boolean,
-    required: true
-  },
-  // sizes: [{
-  //   index: {
-  //     type: Number,
-  //     required: true
-  //   },
-  //   format: {
-  //     type: String,
-  //     required: true,
-  //     trim: true
-  //   }
-  // }],
-  color: {
-    type: Boolean,
-    required: true
-  },
-  process: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  staticImageUrl: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  description: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  dateAdded: {
-    type: Date,
-    required: true,
-    default: Date.now
-  }
+  name: typeReqString,
+  brand: typeReqString,
+  iso: typeReqNumber,
+  formatThirtyFive: typeReqBoolean,
+  formatOneTwenty: typeReqBoolean,
+  color: typeReqBoolean,
+  process: typeReqString,
+  staticImageUrl: typeReqString,
+  description: typeReqString,
+  customDescription: [customDescriptionSchema],
+  keyFeatures: [keyFeaturesSchema],
+  dateAdded: typeReqDate
 })
 
-module.exports = mongoose.model('filmtypes', filmSchema)
+module.exports = mongoose.model('film', filmSchema)
