@@ -12,9 +12,5 @@
       "src": "/.*",
       "dest": "server.js"
     }
-  ], 
-  "env": {
-    "MONGODB_URI": "@my-mongodb-uri",
-    "CORS_ORIGIN": "*"
-  }
+  ]
 }
