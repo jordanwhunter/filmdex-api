@@ -76,6 +76,15 @@ router.patch('/:id', getFilm, async (req, res) => {
 });
 
 // Route for DELETING an existing film type
+router.delete('/:id', getFilm, async (req, res) => {
+  try {
+    await res.film.remove()
+    res.json({ message: 'Film Type Has Been Deleted' })
+  } catch (error) {
+    return res.status(500).json({ message: error.message })
+  }
+})
+
 
 
 module.exports = router
