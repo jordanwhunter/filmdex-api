@@ -21,8 +21,8 @@ router.get('/:id', getFilm, (req, res) => {
 // Route for CREATING a new film type
 router.post('/', async (req, res) => {
   const film = new Film({
-    name: req.body.name,
     brand: req.body.brand,
+    name: req.body.name,
     iso: req.body.iso,
     formatThirtyFive: req.body.formatThirtyFive,
     formatOneTwenty: req.body.formatOneTwenty,
