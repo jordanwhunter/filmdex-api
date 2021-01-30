@@ -9,7 +9,7 @@
   ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/films",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
