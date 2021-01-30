@@ -10,8 +10,8 @@ const customDescriptionSchema = new mongoose.Schema({ uniqueTag: typeString });
 const keyFeaturesSchema = new mongoose.Schema({ feature: typeString });
 
 const filmSchema = new mongoose.Schema({
-  name: typeReqString,
   brand: typeReqString,
+  name: typeReqString,
   iso: typeReqNumber,
   formatThirtyFive: typeReqBoolean,
   formatOneTwenty: typeReqBoolean,
