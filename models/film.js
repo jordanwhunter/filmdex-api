@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 const typeString = { type: String, trim: true };
 const typeReqString = { type: String, required: true, trim: true };
-const typeReqNumber = { type: Number, required: true }
-const typeReqBoolean = { type: Boolean, required: true }
-const typeReqDate = { type: Date, required: true, default: Date.now }
+const typeReqNumber = { type: Number, required: true };
+const typeReqBoolean = { type: Boolean, required: true };
+const typeReqDate = { type: Date, required: true, default: Date.now };
 
 const customDescriptionSchema = new mongoose.Schema({ uniqueTag: typeString });
 const keyFeaturesSchema = new mongoose.Schema({ feature: typeString });
@@ -22,6 +22,6 @@ const filmSchema = new mongoose.Schema({
   customDescription: [customDescriptionSchema],
   keyFeatures: [keyFeaturesSchema],
   dateAdded: typeReqDate
-})
+});
 
 module.exports = mongoose.model('film', filmSchema)
