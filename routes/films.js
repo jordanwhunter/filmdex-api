@@ -47,7 +47,7 @@ router.patch('/:id', getFilm, async (req, res) => {
   if (req.body.customDescription !== null) {
     res.film.customDescription = req.body.customDescription
   }
-  if (req.body.keyFeatures !== null) {
+  else if (req.body.keyFeatures !== null) {
     res.film.keyFeatures = req.body.keyFeatures
   }
   else if (req.body.name !== null) {
