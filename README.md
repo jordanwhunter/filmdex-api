@@ -37,7 +37,7 @@
   * [License](#license)
   
   ## Installation
-  This application was built with ```Node```. If initiating build, make sure to launch your server using ```npm init -y```.
+  This application was built with ```Node```. If initiating build, make sure to initialize your server using ```npm init -y```.
   
   If cloning to personal machine, open repository in terminal and ```cd``` into your root. From there, run ```npm install``` to install all modules listed within the ```package.json``` file.<br>
   <br>
